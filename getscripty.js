@@ -1,4 +1,4 @@
-function playerChoice() {
+function getPlayerChoice() {
     let input = prompt("Rock, paper, or scissors?");
     return input;
 }
@@ -61,7 +61,7 @@ let playRound = (playerChoice,computerChoice) => {
 let playGame = () => {
     let score = 0;
     for (i = 0 ; i < 5 ; i++) {
-        if (playRound('rock',getComputerChoice()) == 'win') {
+        if (playRound(getPlayerChoice(),getComputerChoice()) == 'win') {
             score++;
         } 
     }
