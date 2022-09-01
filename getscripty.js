@@ -6,42 +6,43 @@ let getComputerChoice = () => {
     return arrChoices[rand];
 }
 
-let playGame = (playerChoice,computerChoice) => {
-    playerChoice = playerChoice.toLowerCase();
+let playRound = (playerChoice,computerChoice) => {
+    playerChoice = playerChoice.toLowerCase().trim();
     console.log(playerChoice);
 
     // DRAW BLOCK
     if (playerChoice == computerChoice) {
-        return "It's a draw";
+        let condition = 'draw';
+        return `It's a draw! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
     
     // ROCK BLOCK
     if (playerChoice == 'rock' && computerChoice == 'scissors') {
-        return `You win! You played Rock; Computer played Scissors.
-        Rock beats scissors!`;
+        let condition = 'win';
+        return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
     if (playerChoice == 'rock' && computerChoice == 'paper') {
-        return `You lose! You played Rock; Computer played Paper.
-        Paper beats rock!`;
+        let condition = 'lose';
+        return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
 
     // PAPER BLOCK
     if (playerChoice == 'paper' && computerChoice == 'rock') {
-        return `You win! You played Paper; Computer played Rock.
-        Paper beats rock!`;
+        let condition = 'win';
+        return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
     if (playerChoice == 'paper' && computerChoice == 'scissors') {
-        return `You lose! You played Paper; Computer played Scissors.
-        Scissors beats paper!`;
+        let condition = 'lose';
+        return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
 
     // SCISSORS BLOCK
     if (playerChoice == 'scissors' && computerChoice == 'rock') {
-        return `You lose! You played Scissors; Computer played Rock.
-        Rock beats scissors!`;
+        let condition = 'lose';
+        return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
     if (playerChoice == 'scissors' && computerChoice == 'paper') {
-        return `You win! You played Scissors; Computer played Paper.
-        Scissors beats paper!`;
+        let condition = 'win';
+        return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
     }
 }
