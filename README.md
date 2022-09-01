@@ -13,3 +13,7 @@ One level down we have the playRound() function which plays out a single round o
 The two functions getPlayerChoice() and getComputerChoice() are self explanatory.  
 getPlayerChoice() prompts the user for their choice.  
 getComputerChoice() generates a random number, which corresponds to a random move (rock, paper, or scissors).  
+
+
+FUTURE DEVELOPMENT: Create a GUI for player to input their choices.  
+Possibly via images or by buttons. 
