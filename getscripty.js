@@ -1,3 +1,7 @@
+function playerChoice() {
+    let input = prompt("Rock, paper, or scissors?");
+    return input;
+}
 let getComputerChoice = () => {
     let arrChoices = ['rock','paper','scissors'];
     let rand = Math.floor(Math.random() * 3);
