@@ -67,3 +67,6 @@ let playGame = () => {
     }
     console.log("Your score is " + score);
 }
+
+alert("Game is commencing! Open console to see your round results in real time (as you play/enter them).\nOpen console with the F12 key.")
+playGame();
