@@ -1,4 +1,6 @@
 # rock.paper.scissors
+Last edit: 2022.09.01 13:07PM PDT 
+
 Rock Paper Scissors Game  
 Created as part of a project under The Odin Project beginners course.  
 
