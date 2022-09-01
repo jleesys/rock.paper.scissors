@@ -1,7 +1,11 @@
+// function asks the player for their move via input window
 function getPlayerChoice() {
     let input = prompt("Rock, paper, or scissors?");
     return input;
 }
+
+// Generates a random integer between 0 and 2, and then returns
+// a move based on that number.
 let getComputerChoice = () => {
     let arrChoices = ['rock','paper','scissors'];
     let rand = Math.floor(Math.random() * 3);
@@ -10,11 +14,16 @@ let getComputerChoice = () => {
     return arrChoices[rand];
 }
 
+// Plays a single round (one player move VS one computer move)
 let playRound = (playerChoice,computerChoice) => {
+    // sanitizes input so that any combo of capitlization works, plus extra spaces at start/end
     playerChoice = playerChoice.toLowerCase().trim();
     // console.log(playerChoice);
 
     // DRAW BLOCK
+    // FUNCTION OF BLOCK IS EXTENDED TO ALL OTHER CONDITIONS
+    // Checks and logs whether the player wins, loses, or draws based on the moves.
+    // Returns the condition (win,loss,draw) for later processing
     if (playerChoice == computerChoice) {
         let condition = 'draw';
         console.log( `It's a draw! You played ${playerChoice}. The computer played ${computerChoice}.`);
@@ -58,6 +67,8 @@ let playRound = (playerChoice,computerChoice) => {
     }
 }
 
+// initiates the game, with a loop making sure that 5 rounds are played.
+// score variable will inform us how many times we won at the end of the game
 let playGame = () => {
     let score = 0;
     for (i = 0 ; i < 5 ; i++) {
