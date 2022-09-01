@@ -8,7 +8,7 @@ let getComputerChoice = () => {
 
 let playRound = (playerChoice,computerChoice) => {
     playerChoice = playerChoice.toLowerCase().trim();
-    console.log(playerChoice);
+    // console.log(playerChoice);
 
     // DRAW BLOCK
     if (playerChoice == computerChoice) {
@@ -44,5 +44,12 @@ let playRound = (playerChoice,computerChoice) => {
     if (playerChoice == 'scissors' && computerChoice == 'paper') {
         let condition = 'win';
         return `You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`
+    }
+}
+
+let playGame = () => {
+    let score = 0;
+    for (i = 0 ; i < 5 ; i++) {
+        console.log(playRound('rock',getComputerChoice()));
     }
 }
