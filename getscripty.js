@@ -16,11 +16,17 @@ function getPlayerChoice() {
 // Generates a random integer between 0 and 2, and then returns
 // a move based on that number.
 let getComputerChoice = () => {
-    let arrChoices = ['rock', 'paper', 'scissors'];
-    let rand = Math.floor(Math.random() * 3);
-    // console.log(arrChoices[rand]);
+    // gen a random number for later use
+    var randomNum = Math.floor(Math.random() * 3);
 
-    return arrChoices[rand];
+    // define the array with move set 
+    var moves = ['rock', 'paper', 'scissors'];
+
+    // select the random move
+    let compMove = moves[randomNum];
+
+    // return statement
+    return compMove;
 }
 
 // Plays a single round (one player move VS one computer move)
