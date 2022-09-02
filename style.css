@@ -9,11 +9,11 @@
 }
 
 .header {
-    text-align: center;
     font-size: 48px;
     font-weight: 700;
 }
 
 body {
     font-family: monospace;
+    text-align: center;
 }
