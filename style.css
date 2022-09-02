@@ -1,0 +1,19 @@
+.game-images {
+    display: flex;
+    justify-content: center;
+}
+
+.game-images img {
+    width: 250px;
+    height: 250px;
+}
+
+.header {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+body {
+    font-family: monospace;
+}

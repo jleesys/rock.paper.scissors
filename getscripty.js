@@ -71,4 +71,4 @@ let playGame = () => {
     console.log(`The final score is ${score}!`);
 }
 
-playGame();
+// playGame();
