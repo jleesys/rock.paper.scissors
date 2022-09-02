@@ -61,14 +61,14 @@ let playRound = (playerChoice, computerChoice) => {
 // initiates the game, with a loop making sure that 5 rounds are played.
 // score variable will inform us how many times we won at the end of the game
 let playGame = () => {
-    let score = 0;
-    for (i = 0; i < 5; i++) {
-        if (playRound(getPlayerChoice(), getComputerChoice()) == 'win') {
-            score++;
-        }
+    var score = 0;
+    alert("We're going to play a game! Best of 5 rounds! We're keeping score!");
+    for (let i = 0; i < 5; i++) {
+        let outcome = playRound(getPlayerChoice(), getComputerChoice());
+        outcome == 'win' ? score++ : score;
+        console.log(`Your current score is ${score}.`)
     }
-    console.log("Your score is " + score);
+    console.log(`The final score is ${score}!`);
 }
 
-// alert("Game is commencing! Open console to see your round results in real time (as you play/enter them).\nOpen console with the F12 key.")
 playGame();
