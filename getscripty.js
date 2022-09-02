@@ -31,55 +31,31 @@ let getComputerChoice = () => {
 
 // Plays a single round (one player move VS one computer move)
 let playRound = (playerChoice, computerChoice) => {
-    // sanitizes input so that any combo of capitlization works, plus extra spaces at start/end
-    playerChoice = playerChoice.toLowerCase().trim();
-    // console.log(playerChoice);
+    var outcome;
 
-    // DRAW BLOCK
-    // FUNCTION OF BLOCK IS EXTENDED TO ALL OTHER CONDITIONS
-    // Checks and logs whether the player wins, loses, or draws based on the moves.
-    // Returns the condition (win,loss,draw) for later processing
-    if (playerChoice == computerChoice) {
-        let condition = 'draw';
-        console.log(`It's a draw! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
-    }
-
-    // ROCK BLOCK
-    if (playerChoice == 'rock' && computerChoice == 'scissors') {
-        let condition = 'win';
-        console.log(`You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
-    }
-    if (playerChoice == 'rock' && computerChoice == 'paper') {
-        let condition = 'lose';
-        console.log(`You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
+    switch (playerChoice) {
+        case 'rock':
+            if (computerChoice == 'rock') outcome = 'draw';
+            if (computerChoice == 'paper') outcome = 'lose';
+            if (computerChoice == 'scissors') outcome = 'win';
+            break;
+        case 'paper':
+            if (computerChoice == 'rock') outcome = 'win';
+            if (computerChoice == 'paper') outcome = 'draw';
+            if (computerChoice == 'scissors') outcome = 'lose';
+            break;
+        case 'scissors':
+            if (computerChoice == 'rock') outcome = 'lose';
+            if (computerChoice == 'paper') outcome = 'win';
+            if (computerChoice == 'scissors') outcome = 'draw';
+            break;
+        default:
+            alert("Incorrect moveset");
+            outcome = null;
     }
 
-    // PAPER BLOCK
-    if (playerChoice == 'paper' && computerChoice == 'rock') {
-        let condition = 'win';
-        console.log(`You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
-    }
-    if (playerChoice == 'paper' && computerChoice == 'scissors') {
-        let condition = 'lose';
-        console.log(`You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
-    }
-
-    // SCISSORS BLOCK
-    if (playerChoice == 'scissors' && computerChoice == 'rock') {
-        let condition = 'lose';
-        console.log(`You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
-    }
-    if (playerChoice == 'scissors' && computerChoice == 'paper') {
-        let condition = 'win';
-        console.log(`You ${condition}! You played ${playerChoice}. The computer played ${computerChoice}.`);
-        return condition;
-    }
+    outcome ? console.log(`You ${outcome}! You played ${playerChoice}. The computer played ${computerChoice}.`) : console.log('Undefined move');
+    return outcome;
 }
 
 // initiates the game, with a loop making sure that 5 rounds are played.
@@ -94,5 +70,5 @@ let playGame = () => {
     console.log("Your score is " + score);
 }
 
-alert("Game is commencing! Open console to see your round results in real time (as you play/enter them).\nOpen console with the F12 key.")
+// alert("Game is commencing! Open console to see your round results in real time (as you play/enter them).\nOpen console with the F12 key.")
 playGame();
