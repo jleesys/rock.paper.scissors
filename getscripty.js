@@ -1,3 +1,5 @@
+// Script with UI
+
 // function asks the player for their move via input window
 function getPlayerChoice() {
     while (true) {
