@@ -1,7 +1,37 @@
 // Script with UI for click interactivity
-const rockSelect = document.querySelector('.game-images#rock');
-const paperSelect = document.querySelector('.game-images#paper');
-const scissorsSelect = document.querySelector('.game-images#scissors');
+const body = document.querySelector('body');
+const rockSelect = document.querySelector('#rock');
+const paperSelect = document.querySelector('#paper');
+const scissorsSelect = document.querySelector('#scissors');
+
+const scoreBoard = document.createElement('div');
+scoreBoard.classList.add('score-board');
+body.appendChild(scoreBoard);
+
+rockSelect.addEventListener('click', () => {
+    const playerChoice = 'rock';
+    const computerChoice = getComputerChoice();
+    scoreBoard.textContent = playRound(playerChoice,computerChoice);
+})
+paperSelect.addEventListener('click', () => {
+    const playerChoice = 'paper';
+    const computerChoice = getComputerChoice();
+    scoreBoard.textContent = playRound(playerChoice,computerChoice);
+})
+scissorsSelect.addEventListener('click', () => {
+    const playerChoice = 'scissors';
+    const computerChoice = getComputerChoice();
+    scoreBoard.textContent = playRound(playerChoice,computerChoice);
+})
+
+/*
+const buttons = [rockSelect, paperSelect, scissorsSelect];
+for (const button in buttons) {
+    button.addEventListener('click', () => {
+
+    });
+}
+*/
 
 // function asks the player for their move via input window
 function getPlayerChoice() {
