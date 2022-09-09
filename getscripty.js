@@ -1,4 +1,7 @@
-// Script with UI
+// Script with UI for click interactivity
+const rockSelect = document.querySelector('.game-images#rock');
+const paperSelect = document.querySelector('.game-images#paper');
+const scissorsSelect = document.querySelector('.game-images#scissors');
 
 // function asks the player for their move via input window
 function getPlayerChoice() {
