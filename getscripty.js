@@ -11,17 +11,20 @@ body.appendChild(scoreBoard);
 rockSelect.addEventListener('click', () => {
     const playerChoice = 'rock';
     const computerChoice = getComputerChoice();
-    scoreBoard.textContent = playRound(playerChoice,computerChoice);
+    playRound(playerChoice,computerChoice);
+    // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
 })
 paperSelect.addEventListener('click', () => {
     const playerChoice = 'paper';
     const computerChoice = getComputerChoice();
-    scoreBoard.textContent = playRound(playerChoice,computerChoice);
+    playRound(playerChoice,computerChoice);
+    // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
 })
 scissorsSelect.addEventListener('click', () => {
     const playerChoice = 'scissors';
     const computerChoice = getComputerChoice();
-    scoreBoard.textContent = playRound(playerChoice,computerChoice);
+    playRound(playerChoice,computerChoice);
+    // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
 })
 
 /*
@@ -89,7 +92,8 @@ let playRound = (playerChoice, computerChoice) => {
             outcome = null;
     }
 
-    outcome ? console.log(`You ${outcome}! You played ${playerChoice}. The computer played ${computerChoice}.`) : console.log('Undefined move');
+    console.log(`Your choice: ${playerChoice}\nComputer choice: ${computerChoice}\nOutcome: ${outcome}`);
+    scoreBoard.textContent = `You ` + outcome + `!`;
     return outcome;
 }
 
