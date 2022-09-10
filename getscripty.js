@@ -14,35 +14,6 @@ const scoreBoard = document.createElement('div');
 scoreBoard.classList.add('score-board');
 body.appendChild(scoreBoard);
 
-/*
-rockSelect.addEventListener('click', function handler() {
-    const playerChoice = 'rock';
-    const computerChoice = getComputerChoice();
-    outcome = playRound(playerChoice, computerChoice);
-    gameNum++;
-    if (gameNum == 6) rockSelect.removeEventListener('click',handler)
-    console.log(gameNum);
-    // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
-})
-paperSelect.addEventListener('click', function handler() {
-    const playerChoice = 'paper';
-    const computerChoice = getComputerChoice();
-    playRound(playerChoice, computerChoice);
-    gameNum++;
-    if (gameNum == 6) paperSelect.removeEventListener('click',handler)
-    console.log(gameNum);
-    // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
-})
-scissorsSelect.addEventListener('click', function handler() {
-    const playerChoice = 'scissors';
-    const computerChoice = getComputerChoice();
-    playRound(playerChoice, computerChoice);
-    gameNum++;
-    if (gameNum == 6) scissorsSelect.removeEventListener('click',handler)
-    console.log(gameNum);
-    // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
-})
-*/
 // Generates a random integer between 0 and 2, and then returns
 // a move based on that number.
 let getComputerChoice = () => {
