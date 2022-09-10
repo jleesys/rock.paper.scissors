@@ -7,55 +7,42 @@ const rockSelect = document.querySelector('#rock');
 const paperSelect = document.querySelector('#paper');
 const scissorsSelect = document.querySelector('#scissors');
 
+const buttons = document.getElementsByClassName('image');
+const arrayButtons = Array.from(buttons);
+
 const scoreBoard = document.createElement('div');
 scoreBoard.classList.add('score-board');
 body.appendChild(scoreBoard);
 
-rockSelect.addEventListener('click', () => {
+/*
+rockSelect.addEventListener('click', function handler() {
     const playerChoice = 'rock';
     const computerChoice = getComputerChoice();
-    playRound(playerChoice, computerChoice);
+    outcome = playRound(playerChoice, computerChoice);
+    gameNum++;
+    if (gameNum == 6) rockSelect.removeEventListener('click',handler)
+    console.log(gameNum);
     // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
 })
-paperSelect.addEventListener('click', () => {
+paperSelect.addEventListener('click', function handler() {
     const playerChoice = 'paper';
     const computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
+    gameNum++;
+    if (gameNum == 6) paperSelect.removeEventListener('click',handler)
+    console.log(gameNum);
     // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
 })
-scissorsSelect.addEventListener('click', () => {
+scissorsSelect.addEventListener('click', function handler() {
     const playerChoice = 'scissors';
     const computerChoice = getComputerChoice();
     playRound(playerChoice, computerChoice);
+    gameNum++;
+    if (gameNum == 6) scissorsSelect.removeEventListener('click',handler)
+    console.log(gameNum);
     // scoreBoard.textContent = `You ` + playRound(playerChoice,computerChoice) + `!`;
 })
-
-/*
-const buttons = [rockSelect, paperSelect, scissorsSelect];
-for (const button in buttons) {
-    button.addEventListener('click', () => {
-
-    });
-}
 */
-
-/*
-// function asks the player for their move via input window
-function getPlayerChoice() {
-    while (true) {
-        var playerMove = prompt('Enter your move');
-        playerMove = playerMove.trim().toLowerCase();
-        if (playerMove === null || playerMove !== 'rock' && playerMove !== 'paper' && playerMove !== 'scissors') {
-            console.log("Invalid move. Try again.");
-            alert("Invalid move. Try again.");
-            continue;
-        }
-        break;
-    }
-    return playerMove;
-}
-*/
-
 // Generates a random integer between 0 and 2, and then returns
 // a move based on that number.
 let getComputerChoice = () => {
@@ -101,6 +88,64 @@ let playRound = (playerChoice, computerChoice) => {
     scoreBoard.textContent = `You ` + outcome + `!`;
     return outcome;
 }
+
+/* doesnt work. 
+let removeListeners = () => {
+    rockSelect.removeEventListener('click',process);
+    paperSelect.removeEventListener('click',process);
+    scissors.Select.removeEventListener('click',process);
+}
+*/
+
+let handler = (move) => {
+    const playerChoice = move;
+    const computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
+}
+
+let removeEventListeners = () => {
+    arrayButtons.forEach((button) => {
+        button.removeEventListener('click',player);
+    })
+}
+
+let player = (e) => {
+    if (gameNum == 5) removeEventListeners();
+    let playerMove = e.target.id;
+    handler(playerMove);
+    gameNum++;
+}
+
+// rockSelect.addEventListener('click', player);
+arrayButtons.forEach((button) => {
+    button.addEventListener('click',player);
+})
+
+/*
+//lets deprecate. make this into a list.
+rockSelect.addEventListener('click', function process() {
+    if (gameNum == 5) {
+        rockSelect.removeEventListener('click', process);
+        paperSelect.removeEventListener('click', process);
+        scissorsSelect.removeEventListener('click', process);
+    }
+    handler('rock');
+    gameNum++;
+});
+
+paperSelect.addEventListener('click', function process() {
+    if (gameNum == 5) paperSelect.removeEventListener('click', process);
+    handler('rock');
+    gameNum++;
+});
+
+scissorsSelect.addEventListener('click', function process() {
+    if (gameNum == 5) scissorsSelect.removeEventListener('click', process);
+    handler('rock');
+    gameNum++;
+});
+*/
+
 
 // initiates the game, with a loop making sure that 5 rounds are played.
 // score variable will inform us how many times we won at the end of the game
