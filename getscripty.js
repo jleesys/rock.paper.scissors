@@ -57,7 +57,7 @@ let playRound = (playerChoice, computerChoice) => {
     }
 
     console.log(`Your choice: ${playerChoice}\nComputer choice: ${computerChoice}\nOutcome: ${outcome}`);
-    scoreBoard.textContent = `You ` + outcome + `!`;
+    // scoreBoard.textContent = `You ` + outcome + `!`;
 
     return outcome;
 }
@@ -84,7 +84,7 @@ let handler = (move) => {
         default:
             break;
     }
-    scoreBoard.textContent = `Score is ${score}`
+    scoreBoard.textContent = `You ${outcome}! Score is ${score}`
 }
 
 let removeEventListeners = () => {
