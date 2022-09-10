@@ -1,5 +1,6 @@
 // Script with UI for click interactivity
 var score = 0;
+var losses = 0;
 var gameNum = 1;
 
 const body = document.querySelector('body');
@@ -71,7 +72,17 @@ let removeListeners = () => {
 let handler = (move) => {
     const playerChoice = move;
     const computerChoice = getComputerChoice();
-    playRound(playerChoice, computerChoice);
+    const outcome = playRound(playerChoice, computerChoice);
+    switch (outcome) {
+        case 'win':
+            score++;
+            break;
+        case 'lose':
+            losses++;
+            break;
+        default :
+            break;
+    }
 }
 
 let removeEventListeners = () => {
