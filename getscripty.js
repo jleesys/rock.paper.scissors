@@ -121,32 +121,6 @@ arrayButtons.forEach((button) => {
     button.addEventListener('click',player);
 })
 
-/*
-//lets deprecate. make this into a list.
-rockSelect.addEventListener('click', function process() {
-    if (gameNum == 5) {
-        rockSelect.removeEventListener('click', process);
-        paperSelect.removeEventListener('click', process);
-        scissorsSelect.removeEventListener('click', process);
-    }
-    handler('rock');
-    gameNum++;
-});
-
-paperSelect.addEventListener('click', function process() {
-    if (gameNum == 5) paperSelect.removeEventListener('click', process);
-    handler('rock');
-    gameNum++;
-});
-
-scissorsSelect.addEventListener('click', function process() {
-    if (gameNum == 5) scissorsSelect.removeEventListener('click', process);
-    handler('rock');
-    gameNum++;
-});
-*/
-
-
 // initiates the game, with a loop making sure that 5 rounds are played.
 // score variable will inform us how many times we won at the end of the game
 let playGame = () => {
