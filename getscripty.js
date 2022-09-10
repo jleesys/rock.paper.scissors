@@ -100,6 +100,7 @@ let player = (e) => {
     gameNum++;
     if (gameNum == 6) {
         if (score > losses) scoreBoard.textContent = `You win! Final score is ${score}.`;
+        else if (score == losses) scoreBoard.textContent = `It's a tie. ¯\\\_(ツ)_/¯`
         else {scoreBoard.textContent = `You lose. Final score is ${score}.`}
     }
 }
