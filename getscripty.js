@@ -58,6 +58,7 @@ let playRound = (playerChoice, computerChoice) => {
 
     console.log(`Your choice: ${playerChoice}\nComputer choice: ${computerChoice}\nOutcome: ${outcome}`);
     scoreBoard.textContent = `You ` + outcome + `!`;
+
     return outcome;
 }
 
@@ -80,14 +81,15 @@ let handler = (move) => {
         case 'lose':
             losses++;
             break;
-        default :
+        default:
             break;
     }
+    scoreBoard.textContent = `Score is ${score}`
 }
 
 let removeEventListeners = () => {
     arrayButtons.forEach((button) => {
-        button.removeEventListener('click',player);
+        button.removeEventListener('click', player);
     })
 }
 
@@ -96,22 +98,13 @@ let player = (e) => {
     let playerMove = e.target.id;
     handler(playerMove);
     gameNum++;
+    if (gameNum == 6) {
+        if (score > losses) scoreBoard.textContent = `You win! Final score is ${score}.`;
+        else {scoreBoard.textContent = `You lose. Final score is ${score}.`}
+    }
 }
 
 // rockSelect.addEventListener('click', player);
 arrayButtons.forEach((button) => {
-    button.addEventListener('click',player);
+    button.addEventListener('click', player);
 })
-
-// initiates the game, with a loop making sure that 5 rounds are played.
-// score variable will inform us how many times we won at the end of the game
-let playGame = () => {
-    var score = 0;
-    // alert("We're going to play a game! Best of 5 rounds! We're keeping score!");
-    for (let i = 0; i < 5; i++) {
-        console.log(`Your current score is ${score}.`)
-    }
-    // console.log(`The final score is ${score}!`);
-}
-
-// playGame();
